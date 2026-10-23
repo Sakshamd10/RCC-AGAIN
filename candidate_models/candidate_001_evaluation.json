@@ -1,0 +1,22 @@
+{
+  "candidate": "candidate_001",
+  "concrete_grade": "M40",
+  "steel_grade": "Fe415",
+  "beam_volume_m3": 85.25,
+  "column_volume_m3": 85.8,
+  "members_without_section": [],
+  "beam_steel_kg": 7685.230773133559,
+  "column_steel_kg": 2979.6909738116124,
+  "beams_read": 155,
+  "columns_read": 100,
+  "blocks_skipped": 0,
+  "max_column_interaction_ratio": 0.99,
+  "fail_messages": 0,
+  "concrete_volume_m3": 171.05,
+  "steel_kg": 10664.9,
+  "steel_kg_per_m3": 62.3,
+  "cost_inr": 2061620,
+  "carbon_kgco2e": 98401,
+  "feasible_staad_design": true,
+  "status": "OK (check drift/deflection separately)"
+}

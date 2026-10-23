@@ -1,0 +1,40 @@
+{
+    "candidate_id": "candidate_001",
+    "calculation_time": "2026-10-23T11:23:24",
+    "quantity_basis": "STAAD output geometry; preliminary gross quantities",
+    "concrete_grade": "M40",
+    "beam_concrete_volume_m3": 85.25,
+    "column_concrete_volume_m3": 85.8,
+    "gross_concrete_volume_m3": 171.05,
+    "concrete_density_kg_per_m3": 2400.0,
+    "concrete_mass_kg": 410520.0,
+    "rebar_allowance_kg_per_m3": 100.0,
+    "estimated_rebar_mass_kg": 17105.0,
+    "carbon_factors": {
+        "concrete_kgco2e_per_kg": 0.188,
+        "reinforcing_steel_kgco2e_per_kg": 1.99,
+        "reference": "Older ICE RC 40/50 and ICE V3 rebar references"
+    },
+    "cost_rates_inr": {
+        "concrete_per_m3": 8000.0,
+        "reinforcing_steel_per_kg": 65.0
+    },
+    "cost_breakdown_inr": {
+        "concrete": 1368400.0,
+        "reinforcing_steel": 1111825.0,
+        "total_material_cost": 2480225.0
+    },
+    "carbon_breakdown_kgco2e": {
+        "concrete": 77177.76,
+        "reinforcing_steel": 34038.95,
+        "total": 111216.71,
+        "total_tonnes_co2e": 111.217
+    },
+    "limitations": [
+        "Slab concrete is not included because slab geometry was not identified.",
+        "Gross member volumes may double-count beam-column intersections.",
+        "Reinforcement mass is an assumed allowance, not an extracted bar schedule.",
+        "Formwork, labour, transport, wastage, foundations beyond listed members, and construction equipment are excluded.",
+        "Carbon factors and cost rates must be validated for the project location."
+    ]
+}

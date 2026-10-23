@@ -1,0 +1,4 @@
+﻿member_id,start_node,end_node,length_m,YD_m,ZD_m,area_m2,gross_volume_m3,candidate
+26,32,37,4.99999,0.4,0.275,0.11,0.549999,candidate_001
+26,32,37,4.99999,0.45,0.325,0.14625,0.731249,candidate_002
+26,32,37,4.99999,0.55,0.35,0.1925,0.962498,candidate_003

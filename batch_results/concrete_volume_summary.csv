@@ -1,0 +1,4 @@
+﻿candidate,model_file,nodes_read,members_read,section_assignments_read,members_calculated,members_missing,gross_supported_volume_m3,status
+candidate_001,C:\RCC AGAIN\candidate_models\candidate_001.STD,30,35,156,1,34,0.549999,CHECK REQUIRED
+candidate_002,C:\RCC AGAIN\candidate_models\candidate_002.STD,30,35,156,1,34,0.731249,CHECK REQUIRED
+candidate_003,C:\RCC AGAIN\candidate_models\candidate_003.STD,30,35,156,1,34,0.962498,CHECK REQUIRED

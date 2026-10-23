@@ -1,0 +1,140 @@
+                          PROGRAM: STAAD.Pro
+                          VERSION: 26.00.00.340    
+                16:18:14:27  ENTERING STAAD                                    
+                16:18:14:31  USING 64 BIT STAAD ENGINE                         
+                16:18:14:31  ENTERING MAINN                                    
+                16:18:14:31  START JOB INFORMATION                             
+                16:18:14:31  INPUT WIDTH 79                                    
+                16:18:14:31  UNIT METER KN                                     
+                16:18:14:31  JOINT COORDINATES                                 
+                16:18:14:31  ENTERING JOINTC                                   
+                16:18:14:31  JOINTC NEWJ                                 400000
+                16:18:14:33  MAX NODE NO.                                   120
+                16:18:14:33  MEMBER INCIDENCES                                 
+                16:18:14:35  DEFINE MATERIAL START                             
+                16:18:14:35  MEMBER PROPERTY                                   
+                16:18:14:72    ++ Finished Reading Member Properties ...       
+                16:18:14:72  CONSTANTS                                         
+                16:18:14:72  SUPPORTS                                          
+                16:18:14:72  ENTERING SUPPORT                                  
+                16:18:14:72  DEFINE WIND LOAD                                  
+                16:18:14:74  DEFINE IS1893 2016 AC                             
+                16:18:14:74  DUPLICATE ELEMENT CHECK                           
+                16:18:14:74  CHECKING STRUCTURAL INTEGRITY                     
+                16:18:14:74  CHECK UNCONNECTED JOINTS AND                      
+                16:18:14:74  CALCULATE MAX JOINT CONNECTIVITY                  
+                16:18:14:74  CHECK MULTIPLE STRUCTURES                         
+                16:18:14:74  MAXIMUM E =                           3.149987E+03
+                16:18:14:74  MINIMUM E =                           3.149987E+03
+                16:18:14:75  LOAD 1 LOADTYPE SEISM                             
+                16:18:14:75  ENTERING SUPPORT                                  
+                16:18:14:75  NRJOLD                                           0
+                16:18:14:75  SUPPORT NOLD                                     0
+                16:18:14:75  SUPPORT N                                      600
+                16:18:14:75  BEFORE LOADPR                                     
+                16:18:14:75  REOPEN AS DIR                                    0
+                16:18:14:76  ENTER LOADPR                                      
+                16:18:14:76  FLODUNIT                                        59
+                16:18:15:56  PERFORM ANALYSIS                                  
+                16:18:15:56  pdel iter                                        0
+                16:18:15:56  MBW DOF BAND=                                    6
+                16:18:15:56  NUMBER OF PRIMARY CASES                         10
+                16:18:15:56  NUMBER OF CASES                                 70
+                16:18:15:56  #OF CASES W/ELEM INMEMORY                       70
+                16:18:15:56  MEMORY FOR MEMBER LOADS                     214200
+                16:18:15:56  MEMORY FOR DISPLACEMENTS                     50400
+                16:18:15:56  MEMORY FOR MEMBER FORCES                    214200
+                16:18:15:56  Using 64-bit analysis engine                      
+                16:18:15:56  BEFORE SOLVER 1                                   
+                16:18:15:61  Start Input for Next Load Case                    
+                16:18:15:68  case no=    1 seq. no=   1 idynl= 0               
+                16:18:15:68  MASSSET                                          0
+                16:18:15:68  LOADEND ISLAVE                                   0
+                16:18:15:68  Start Input for Next Load Case                    
+                16:18:15:68  case no=    2 seq. no=   2 idynl= 0               
+                16:18:15:68  LOADEND ISLAVE                                   0
+                16:18:15:68  Start Input for Next Load Case                    
+                16:18:15:68  case no=    3 seq. no=   3 idynl= 0               
+                16:18:15:68  LOADEND ISLAVE                                   0
+                16:18:15:68  Start Input for Next Load Case                    
+                16:18:15:68  case no=    4 seq. no=   4 idynl= 0               
+                16:18:15:68  LOADEND ISLAVE                                   0
+                16:18:15:68  Start Input for Next Load Case                    
+                16:18:16: 1  case no=    5 seq. no=   5 idynl= 0               
+                16:18:16: 1  LOADEND ISLAVE                                   0
+                16:18:16: 1  Start Input for Next Load Case                    
+                16:18:16:32  case no=    6 seq. no=   6 idynl= 0               
+                16:18:16:32  LOADEND ISLAVE                                   0
+                16:18:16:32  Start Input for Next Load Case                    
+                16:18:16:33  case no=    7 seq. no=   7 idynl= 0               
+                16:18:16:33  LOADEND ISLAVE                                   0
+                16:18:16:33  Start Input for Next Load Case                    
+                16:18:16:33  case no=    8 seq. no=   8 idynl= 0               
+                16:18:16:33  LOADEND ISLAVE                                   0
+                16:18:16:33  Start Input for Next Load Case                    
+                16:18:16:33  case no=    9 seq. no=   9 idynl= 0               
+                16:18:16:33  LOADEND ISLAVE                                   0
+                16:18:16:33  Start Input for Next Load Case                    
+                16:18:16:33  case no=   10 seq. no=  10 idynl= 0               
+                16:18:16:33  LOADEND ISLAVE                                   0
+                16:18:16:33  NVPREV                                           0
+                16:18:16:34  AMAXNON                               6.561680E+00
+                16:18:16:34  IRECSIZL=                                     4000
+                16:18:16:34  MTX BLOCKSIZE=                                3600
+                16:18:16:34  MI=                                            600
+                16:18:16:34  NORECL=                                          1
+                16:18:16:34  NORECL1=                                         1
+                16:18:16:34  IWORD=                                       32000
+                16:18:16:34  JRECSIZE=                                     4000
+                16:18:16:34  IWORDJ=                                      32000
+                16:18:16:34  IBYTE=                                           4
+                16:18:16:34  JOINTS=                                        120
+                16:18:16:34  MEMBERS=                                       255
+                16:18:16:34  PLATES =                                         0
+                16:18:16:34  SOLIDS =                                         0
+                16:18:16:34  NO. OF EQUATIONS=                              600
+                16:18:16:34  idyn=                                            0
+                16:18:16:34  ipd=                                             0
+                16:18:16:34  icablanl=                                        0
+                16:18:16:34  ++ Processing Element Stiffness Matrix.           
+                16:18:16:35  NV1                                             10
+                16:18:16:50  ULODUNIT                                        60
+                16:18:16:50  Rayleigh freq =                      -3.691353E+02
+                16:18:16:50  Rayleigh freq =                      -3.691353E+02
+                16:18:16:50  Rayleigh freq =                       1.850071E-36
+                16:18:16:50  Rayleigh freq =                       1.850072E-36
+                16:18:16:53  ++ Calculating Element Forces & Reactions.        
+                16:18:16:96  COMBINATION CASES=                              25
+                16:18:16:96  MAX CM MEMORY (KILOWORDS)                      335
+                16:18:16:96  AFTER SOLVER 1                                    
+                16:18:16:98  REOPEN AS SEQ                                    0
+                16:18:16:98  START CONCRETE DESIGN                             
+                16:18:16:99  COLUMN DESIGN                                  175
+                16:18:32:17    ++ Finished Column Design.                      
+                16:18:32:17  ENTERING SECTNM110 IQ=                         255
+                16:18:32:17               NSEC=                              11
+                16:18:32:17             ISECTN=                               0
+                16:18:32:39  SECTNM110 DO 925                                  
+                16:18:32:53  SECTNM110 DO 932                                  
+                16:18:33: 4  BEAM DESIGN                                    155
+                16:18:33:76    ++ Finished Beam Design.                        
+                16:18:33:76  FINISH                                            
+                16:18:33:76  All Commands FINISHed                             
+                16:18:33:76  DATASAVE for SPRO GUI                             
+                16:18:33:79  ++ Creating Displacement File (DSP)...            
+                16:18:33:89  ++ Creating Reaction File (REA)...                
+                16:18:33:92  ++ Creating Section Force File (BEN)...           
+                16:18:33:92  ENTERING SECTNM110 IQ=                         255
+                16:18:33:92               NSEC=                              11
+                16:18:33:92             ISECTN=                               0
+                16:18:34:40  SECTNM110 DO 925                                  
+                16:18:34:60  SECTNM110 DO 932                                  
+                16:18:35:40  ++ Creating Section Force File (BMD)...           
+                16:18:36:20  ++ Creating Section Displace File (SEC)...        
+                16:18:36:20  ENTERING ENVLP1 ITYP1=                          -5
+                16:18:36:20  SECT DISPLACE                                     
+                16:18:37: 1  ++ Creating Section Displace File (SCN)...        
+                16:18:37:74  ++ Creating Design information File (DGN)...      
+                16:18:37:78  ALLOCATED CM MEMORY (KILOWORDS)             300000
+                16:18:37:78  MAX CM MEMORY (KILOWORDS)                      375
+                16:18:37:79  DBS LONG SEC NAME                                 

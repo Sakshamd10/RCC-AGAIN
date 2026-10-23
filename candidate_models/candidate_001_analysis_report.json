@@ -1,0 +1,16 @@
+{
+  "candidate": "C:\\RCC AGAIN\\candidate_models\\candidate_001.STD",
+  "staad_version": "26.0.0.340",
+  "analysis_status": {
+    "ReturnValue": 3,
+    "ReturnString": "Analysis completed with warnings but without errors",
+    "NoOfWarnings": 1,
+    "NoOfErrors": 0,
+    "CPUTime": 50
+  },
+  "errors": [],
+  "warnings": [
+    "**WARNING: IF THIS UBC/IBC ANALYSIS HAS TENSION/COMPRESSION"
+  ],
+  "results_available": true
+}
