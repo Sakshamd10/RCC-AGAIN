@@ -1,0 +1,2 @@
+﻿model,nodes,members,section_assignments,beam_volume_m3,column_stub_volume_m3,gross_member_concrete_volume_m3,concrete_mass_kg,assumed_steel_mass_kg,concrete_cost_INR,assumed_steel_cost_INR,estimated_total_cost_INR,concrete_carbon_kgCO2e,assumed_steel_carbon_kgCO2e,estimated_total_carbon_kgCO2e,status
+candidate_023.STD,120,255,255,95.90625000000021,36.40000000000004,132.30625000000026,317535.00000000064,13230.625000000025,1058450.000000002,859990.6250000016,1918440.6250000037,59696.58000000012,26328.94375000005,86025.52375000017,PASS

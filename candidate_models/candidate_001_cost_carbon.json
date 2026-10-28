@@ -1,6 +1,6 @@
 {
     "candidate_id": "candidate_001",
-    "calculation_time": "2026-10-23T11:23:24",
+    "calculation_time": "2026-10-23T12:38:54",
     "quantity_basis": "STAAD output geometry; preliminary gross quantities",
     "concrete_grade": "M40",
     "beam_concrete_volume_m3": 85.25,
