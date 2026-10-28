@@ -1,0 +1,2 @@
+﻿generation,beam_width_m,beam_depth_m,column_width_m,column_depth_m,assumed_steel_kg_per_m3,estimated_concrete_volume_m3,estimated_steel_mass_kg,estimated_cost_INR,estimated_carbon_kgCO2e
+pareto,0.25,0.4,0.45,0.45,80.0,130.15,10412.0,1717980.0,79443.56

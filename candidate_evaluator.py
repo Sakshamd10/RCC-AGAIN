@@ -199,15 +199,17 @@ def steel_from_anl(anl_path, col_ids):
         fail_messages=fails,
     )
 
+#3
 
-# ======================================================================
-# 3. SERVICEABILITY CHECKS (drift + deflection)
-# ======================================================================
 def serviceability_checks(base, beam_lengths):
     """
-    Read candidate_NNN_structural_results.json and compute max drift
-    and max deflection ratios. Automatically handles inches/mm.
+    Read candidate_NNN_structural_results.json and compute
+    max inter-storey drift (seismic cases) and joint vertical
+    displacement / span.
+    OpenSTAAD GetNodeDisplacements() returns INCHES (STAAD base units),
+    not metres, even when the model uses UNIT METER KN.
     """
+    INCH_TO_M = 0.0254
     results_path = base.with_name(base.stem + "_structural_results.json")
 
     inf = float("inf")
@@ -231,51 +233,55 @@ def serviceability_checks(base, beam_lengths):
     if not disp:
         return empty
 
-    # ---- Storey height from the .STD joint Y coordinates ----
-    try:
-        nodes, _, _, _, _ = read_std(base.with_suffix(".STD"))
-        ys = sorted({round(p[1], 3) for p in nodes.values()})
-        if len(ys) > 1:
-            storey_h = min(
-                ys[i + 1] - ys[i] for i in range(len(ys) - 1)
-            )
-            total_h = max(ys) - min(ys)
-        else:
-            storey_h, total_h = 3.0, 3.0
-    except Exception:
-        storey_h, total_h = 3.0, 12.0
+    std_path = base.with_suffix(".STD")
+    nodes, _, _, _, _ = read_std(std_path)
 
-    # ---- Max horizontal displacement magnitude ----
-    max_drift_raw = 0.0
-    max_vert_raw = 0.0
+    # Load case types from the .STD (LOAD 1 LOADTYPE Seismic-H ...)
+    std_text = std_path.read_text(encoding="latin-1")
+    load_type = {
+        int(n): t.lower()
+        for n, t in re.findall(
+            r"(?im)^\s*LOAD\s+(\d+)\s+LOADTYPE\s+(\S+)", std_text
+        )
+    }
+
+    # Displacements in metres, grouped by load case
+    by_case = {}
     for rec in disp:
         r = rec.get("result") or []
         if len(r) < 3:
             continue
-        dx, dy, dz = r[0], r[1], r[2]
-        d = math.sqrt(dx * dx + dz * dz)
-        max_drift_raw = max(max_drift_raw, d)
-        max_vert_raw = max(max_vert_raw, abs(dy))
+        by_case.setdefault(rec["load_case_id"], {})[rec["node_id"]] = (
+            r[0] * INCH_TO_M, r[1] * INCH_TO_M, r[2] * INCH_TO_M
+        )
 
-    # ---- UNIT CONVERSION FIX ----
-    # If raw is > 1.0, it's in inches. If > 100, it's in mm.
-    # Otherwise, it's already in meters.
-    if max_drift_raw > 100.0:
-        max_drift_m = max_drift_raw / 1000.0   # mm to m
-        max_vert_m = max_vert_raw / 1000.0
-    elif max_drift_raw > 1.0:
-        max_drift_m = max_drift_raw * 0.0254   # inches to m
-        max_vert_m = max_vert_raw * 0.0254
-    else:
-        max_drift_m = max_drift_raw            # already meters
-        max_vert_m = max_vert_raw
+    # Column lines: nodes with the same X and Z, sorted by height
+    lines = {}
+    for n, (x, y, z) in nodes.items():
+        lines.setdefault((round(x, 3), round(z, 3)), []).append((y, n))
+    for pts in lines.values():
+        pts.sort()
 
-    # Normalise
-    drift_ratio_total = max_drift_m / total_h if total_h > 0 else inf
-    drift_ratio_storey = max_drift_m / storey_h if storey_h > 0 else inf
-    max_drift_ratio = max(drift_ratio_total, drift_ratio_storey)
+    # Inter-storey drift = relative displacement of two consecutive
+    # floors / that storey height (IS 1893 cl. 7.11.1), seismic cases
+    max_drift_ratio = 0.0
+    for lc, d in by_case.items():
+        if not load_type.get(lc, "").startswith("seismic"):
+            continue
+        for pts in lines.values():
+            for (y0, n0), (y1, n1) in zip(pts, pts[1:]):
+                h = y1 - y0
+                if h <= 1e-6 or n0 not in d or n1 not in d:
+                    continue
+                for k in (0, 2):          # X and Z directions
+                    rel = abs(d[n1][k] - d[n0][k])
+                    max_drift_ratio = max(max_drift_ratio, rel / h)
 
-    # Span: worst beam length in the model, or 5 m fallback
+    # Vertical joint displacement / longest span (all cases)
+    max_vert_m = max(
+        (abs(u[1]) for d in by_case.values() for u in d.values()),
+        default=0.0,
+    )
     span = max(beam_lengths) if beam_lengths else 5.0
     deflection_ratio = max_vert_m / span if span > 0 else inf
 
@@ -286,8 +292,6 @@ def serviceability_checks(base, beam_lengths):
         deflection_limit=DEFLECTION_LIMIT,
         serviceability_status="OK",
     )
-
-
 # ======================================================================
 # 4. EVALUATE ONE CANDIDATE
 # ======================================================================
